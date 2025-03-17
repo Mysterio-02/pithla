@@ -1,0 +1,488 @@
+:root {
+    --primary-color: #FFD700;
+    --secondary-color: #8B4513;
+    --accent-color: #DAA520;
+    --text-color: #2C1810;
+    --background-color: #FFF8E7;
+    --header-bg: #2C1810;
+    --header-text: #FFD700;
+    --royal-gold: #FFD700;
+    --royal-brown: #8B4513;
+    --royal-accent: #DAA520;
+}
+
+@keyframes shimmer {
+    0% { background-position: -100% 0; }
+    100% { background-position: 100% 0; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes borderGlow {
+    0%, 100% { border-color: var(--royal-gold); }
+    50% { border-color: var(--royal-accent); }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23daa520' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.main-header {
+    background-color: var(--header-bg);
+    border-bottom: 2px solid var(--primary-color);
+    position: relative;
+}
+
+.royal-border-top {
+    height: 4px;
+    background: var(--primary-color);
+}
+
+.nav-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    position: relative;
+}
+
+.nav-bar::before, .nav-bar::after {
+    content: '☸';
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-bar::before {
+    left: 0.5rem;
+}
+
+.nav-bar::after {
+    right: 0.5rem;
+}
+
+.logo {
+    text-align: center;
+    position: relative;
+    padding: 0 1.5rem;
+}
+
+.logo::before, .logo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
+}
+
+.logo::before {
+    left: 0;
+}
+
+.logo::after {
+    right: 0;
+}
+
+.logo-emblem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bhati-symbol {
+    width: 50px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.bhati-symbol:hover {
+    transform: scale(1.1);
+}
+
+.logo-content {
+    position: relative;
+    text-align: center;
+}
+
+.logo h1 {
+    color: var(--header-text);
+    font-size: 1.8rem;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    margin-bottom: 0.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.logo span {
+    color: var(--accent-color);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    display: block;
+}
+
+.royal-line {
+    width: 60%;
+    height: 1px;
+    background: var(--primary-color);
+    margin: 0.3rem auto;
+}
+
+.logo small {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--header-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.hero-section {
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Photos/Pithla Fort.JPG');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.royal-corner {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+}
+
+.royal-corner::before,
+.royal-corner::after {
+    content: '';
+    position: absolute;
+    background: var(--royal-gold);
+}
+
+.royal-corner::before {
+    width: 3px;
+    height: 100%;
+}
+
+.royal-corner::after {
+    width: 100%;
+    height: 3px;
+}
+
+.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.top-right {
+    top: 20px;
+    right: 20px;
+    transform: rotate(90deg);
+}
+
+.bottom-left {
+    bottom: 20px;
+    left: 20px;
+    transform: rotate(-90deg);
+}
+
+.bottom-right {
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(180deg);
+}
+
+.royal-symbol {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 20px;
+    background: linear-gradient(45deg, var(--royal-gold), var(--royal-accent));
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: spin 20s linear infinite;
+}
+
+.royal-symbol-bottom {
+    width: 40px;
+    height: 40px;
+    margin: 20px auto 0;
+    background: linear-gradient(-45deg, var(--royal-gold), var(--royal-accent));
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: spin 15s linear infinite reverse;
+}
+
+.hero-content {
+    padding: 3rem;
+    background: rgba(44, 24, 16, 0.9);
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    border: 3px solid var(--royal-gold);
+    animation: borderGlow 3s infinite;
+}
+
+.hero-content::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 1px solid var(--royal-accent);
+    z-index: -1;
+}
+
+.hero-content::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg,
+        var(--royal-gold) 0%,
+        transparent 20%,
+        transparent 80%,
+        var(--royal-gold) 100%
+    );
+    z-index: -2;
+    opacity: 0.3;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: var(--royal-gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+                 0 0 10px rgba(255, 215, 0, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-content h1::before,
+.hero-content h1::after {
+    content: '☸';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.hero-content h1::before {
+    left: -2.5rem;
+}
+
+.hero-content h1::after {
+    right: -2.5rem;
+}
+
+.hero-content h2 {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 70vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.devanagari-title {
+    text-align: center;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 1rem auto;
+}
+
+.history-content, .geography-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.history-text, .geography-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.history-text h3, .geography-text h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.history-text p, .geography-text p {
+    margin-bottom: 2rem;
+}
+
+.history-image, .geography-image {
+    position: relative;
+}
+
+.history-image img, .geography-image img {
+    width: 100%;
+    height: auto;
+    border: 8px solid var(--accent-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image-caption {
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+.contact-section {
+    background-color: #2C1810;
+    color: var(--background-color);
+}
+
+.contact-section h2 {
+    color: var(--primary-color);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--accent-color);
+}
+
+.contact-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+footer {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .history-content, .geography-content, .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
