@@ -124,17 +124,31 @@
         // PITHLA.IN OFFICIAL GOOGLE APPS SCRIPT WEB APP INTEGRATION
         // =========================================================================
         
-        // 1. Apne Apps Script Web App ka Deployment URL yahan paste karein:
-        const APPS_SCRIPT_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw6TzXhSjYQWzO_EXAMPLE/exec";
+        // ⚠️ अपने Google Apps Script का Web App URL यहाँ नीचे डालें:
+        const APPS_SCRIPT_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzFaY7kAiEmh6k_12RlX2Ta-QIlmpLiTlewHRH63fOWWQ8mEyPKoKCK2rld9I3tPXiY/exec";
 
         (function() {
             const frame = document.getElementById('pithlaFrame');
             const loader = document.getElementById('loader');
 
-            // Current URL ke query parameters ko Web App URL me pass karein
-            // Jaise: pithla.in/?page=gallery ya pithla.in/?page=genealogy
+            // Check if placeholder URL is still present
+            if (APPS_SCRIPT_WEBAPP_URL.includes('AKfycbw6TzXhSjYQWzO_EXAMPLE') || !APPS_SCRIPT_WEBAPP_URL.startsWith('https://script.google.com/macros/s/')) {
+                loader.innerHTML = `
+                    <div style="text-align:center; padding:2rem; max-width:600px; color:#FFD700; font-family:serif;">
+                        <img src="Photos/Bhati%20Symbl.png" onerror="this.style.display='none'" style="width:60px; filter:brightness(0) invert(1); margin-bottom:1rem;">
+                        <h2 style="font-size:1.8rem; margin-bottom:0.8rem; color:#FFD700;">पीथला ठिकाना | Pithla Thikana</h2>
+                        <div style="background:rgba(218,165,32,0.15); border:1px solid #DAA520; border-radius:8px; padding:1.2rem; margin:1.2rem 0; text-align:left; color:#FFF8E7; font-family:sans-serif; font-size:0.95rem; line-height:1.6;">
+                            <strong style="color:#FFD700;">⚙️ Web App URL Setup Required:</strong><br>
+                            कृपया <code>index.html</code> फ़ाइल खोलें और <code>APPS_SCRIPT_WEBAPP_URL</code> में अपना असली Apps Script Web App Deployment URL पेस्ट करें।
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            // Forward query parameters (?page=gallery, ?page=genealogy, etc.)
             const currentSearch = window.location.search || '';
-            let targetUrl = https://script.google.com/macros/s/AKfycbzFaY7kAiEmh6k_12RlX2Ta-QIlmpLiTlewHRH63fOWWQ8mEyPKoKCK2rld9I3tPXiY/exec;
+            let targetUrl = APPS_SCRIPT_WEBAPP_URL;
 
             if (currentSearch) {
                 const separator = targetUrl.includes('?') ? '&' : '?';
@@ -143,17 +157,17 @@
 
             frame.src = targetUrl;
 
-            // Jab iframe load ho jaye, loader ko smooth hide karein
+            // Hide loader once frame is loaded
             frame.onload = function() {
                 setTimeout(function() {
                     loader.classList.add('hidden');
-                }, 400);
+                }, 300);
             };
 
-            // Fallback: Agar 6 second me frame load na ho to loader hide ho jaye
+            // Safety timeout: hide loader after 4 seconds regardless
             setTimeout(function() {
                 loader.classList.add('hidden');
-            }, 6000);
+            }, 4000);
         })();
     </script>
 </body>
