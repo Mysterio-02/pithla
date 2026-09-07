@@ -1,82 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>पीथला ठिकाना | Pithla Thikana</title>
+    <title>पीथला ठिकाना | Pithla Thikana - The Royal Heritage of Rawlot Bhati Rajputs</title>
+    <meta name="description" content="Official Heritage Portal of Pithla Thikana, Jaisalmer, Rajasthan. Preserving the royal legacy, genealogy, fort architecture, and history of Rawlot Bhati Rajputs.">
+    <meta name="theme-color" content="#2C1810">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Sans+Devanagari:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #2C1810;
+            font-family: 'Cinzel', 'Noto Sans Devanagari', serif, sans-serif;
+        }
+
+        /* Royal Loader */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: #2C1810;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-emblem {
+            width: 70px;
+            height: auto;
+            filter: brightness(0) invert(1);
+            margin-bottom: 1.2rem;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .loader-title {
+            color: #FFD700;
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .loader-subtitle {
+            color: #DAA520;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .loader-spinner {
+            width: 36px;
+            height: 36px;
+            border: 3px solid rgba(218, 165, 32, 0.2);
+            border-top: 3px solid #FFD700;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 10px #FFD700); }
+        }
+
+        /* Seamless Apps Script Web App Frame */
+        #pithlaFrame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            background: #FFF8E7;
+        }
+    </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="royal-talwar left-talwar"></div>
-        <div class="royal-talwar right-talwar"></div>
-        <div class="royal-border-top"></div>
-        <nav class="nav-bar">
-            <div class="logo">
-                <div class="logo-emblem">
-                    <img src="Photos/Bhati Symbl.png" alt="Bhati Symbol" class="bhati-symbol">
-                    <div class="logo-content">
-                        <span>Pithla Thikana</span>
-                        <div class="royal-line"></div>
-                        <small>Est. 1651-61</small>
-                    </div>
-                </div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#history">History</a></li>
-                <li><a href="#geography">Geography</a></li>
-            </ul>
-        </nav>
-        <div class="royal-border-bottom"></div>
-    </header>
 
-    <main>
-        <section id="history" class="history-section">
-            <div class="container">
-                <h2>History & Legacy</h2>
-                <div class="history-content">
-                    <div class="history-text">
-                        <h3>Royal Heritage</h3>
-                        <p>Pithla (or Peethla) is a historic village in Jaisalmer district, Rajasthan, located approximately 26 km south of Jaisalmer city. It has been a significant stronghold of the Rawlot Bhati Rajputs.</p>
-                        <h3>Royal Lineage</h3>
-                        <p>Maharawal Sabal Singh (Maharawal of Jaisalmer, 1651–1661) granted Pithla Thikana to his son. Thakur Rawal Bankidas Singh became the first ruler of Pithla Thikana, marking the beginning of the Rawlot branch from here.</p>
-                    </div>
-                    <div class="history-image">
-                        <img src="Photos/Pithla Fort.JPG" alt="Vishan Singh Rawlot ki Prol">
-                        <p class="image-caption">Vishan Singh Rawlot ki Prol - The Pithla Fort</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Royal Loading Screen -->
+    <div id="loader">
+        <img src="Photos/Bhati%20Symbl.png" 
+             onerror="this.style.display='none'" 
+             alt="Bhati Emblem" 
+             class="loader-emblem">
+        <div class="loader-title">पीथला ठिकाना</div>
+        <div class="loader-subtitle">PITHLA THIKANA</div>
+        <div class="loader-spinner"></div>
+    </div>
 
-        <section id="geography" class="geography-section">
-            <div class="container">
-                <h2>Geographical Significance</h2>
-                <div class="geography-content">
-                    <div class="geography-image">
-                        <img src="Photos/Sunset.JPG" alt="Sunset at Pithla Thikana">
-                        <p class="image-caption">Mesmerizing Sunset at Pithla Thikana</p>
-                    </div>
-                    <div class="geography-text">
-                        <p>Pithla is renowned for its high-quality yellow sandstone, which has been used in historic structures across Rajasthan. The village is geographically significant due to its close proximity to Jaisalmer and its contribution to Rajasthan's architectural heritage.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- Embedded Google Apps Script CMS Web App -->
+    <iframe id="pithlaFrame" 
+            title="Pithla Thikana Official Portal" 
+            allow="camera; clipboard-read; clipboard-write;"
+            loading="eager">
+    </iframe>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Pithla Thikana. All rights reserved.</p>
-        </div>
-    </footer>
+    <script>
+        // =========================================================================
+        // PITHLA.IN OFFICIAL GOOGLE APPS SCRIPT WEB APP INTEGRATION
+        // =========================================================================
+        
+        // 1. Apne Apps Script Web App ka Deployment URL yahan paste karein:
+        const APPS_SCRIPT_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw6TzXhSjYQWzO_EXAMPLE/exec";
 
-    <script src="script.js"></script>
+        (function() {
+            const frame = document.getElementById('pithlaFrame');
+            const loader = document.getElementById('loader');
+
+            // Current URL ke query parameters ko Web App URL me pass karein
+            // Jaise: pithla.in/?page=gallery ya pithla.in/?page=genealogy
+            const currentSearch = window.location.search || '';
+            let targetUrl = https://script.google.com/macros/s/AKfycbzFaY7kAiEmh6k_12RlX2Ta-QIlmpLiTlewHRH63fOWWQ8mEyPKoKCK2rld9I3tPXiY/exec;
+
+            if (currentSearch) {
+                const separator = targetUrl.includes('?') ? '&' : '?';
+                targetUrl += separator + currentSearch.substring(1);
+            }
+
+            frame.src = targetUrl;
+
+            // Jab iframe load ho jaye, loader ko smooth hide karein
+            frame.onload = function() {
+                setTimeout(function() {
+                    loader.classList.add('hidden');
+                }, 400);
+            };
+
+            // Fallback: Agar 6 second me frame load na ho to loader hide ho jaye
+            setTimeout(function() {
+                loader.classList.add('hidden');
+            }, 6000);
+        })();
+    </script>
 </body>
 </html>
