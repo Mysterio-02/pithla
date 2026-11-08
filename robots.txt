@@ -1,0 +1,11 @@
+# robots.txt for pithla.in
+# Official Royal Heritage Portal of Pithla Thikana (Rawlot Bhati Rajputs)
+
+User-agent: *
+Allow: /
+Allow: /Photos/
+Allow: /styles.css
+Allow: /script.js
+
+# Sitemap location
+Sitemap: https://pithla.in/sitemap.xml

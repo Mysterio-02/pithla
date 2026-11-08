@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Home / Main Heritage Portal -->
+    <url>
+        <loc>https://pithla.in/</loc>
+        <lastmod>2026-11-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://pithla.in/Photos/Pithla%20Fort.JPG</image:loc>
+            <image:title>पीथला दुर्ग - विशन सिंह रावलौत की प्रोल | Pithla Fort Gate</image:title>
+            <image:caption>The Historic Golden Sandstone Fort Gate of Pithla Thikana, Jaisalmer</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://pithla.in/Photos/Bhati%20Symbl.png</image:loc>
+            <image:title>Bhati Rajput Royal Crest | भाटी कुल चिन्ह</image:title>
+        </image:image>
+    </url>
+
+    <!-- Royal Genealogy (शाही वंशावली) -->
+    <url>
+        <loc>https://pithla.in/?page=genealogy</loc>
+        <lastmod>2026-11-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://pithla.in/Photos/Pithla_Fort_Gate.jpg</image:loc>
+            <image:title>शाही वंशावली - पीथला ठिकाना | Rawlot Bhati Genealogy</image:title>
+        </image:image>
+    </url>
+
+    <!-- Heritage Gallery (चित्र दीर्घा) -->
+    <url>
+        <loc>https://pithla.in/?page=gallery</loc>
+        <lastmod>2026-11-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://pithla.in/Photos/Sunset.JPG</image:loc>
+            <image:title>Sunset at Pithla Thikana, Jaisalmer</image:title>
+        </image:image>
+    </url>
+
+    <!-- Royal Architecture (शाही वास्तुकला) -->
+    <url>
+        <loc>https://pithla.in/?page=architecture</loc>
+        <lastmod>2026-11-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://pithla.in/Photos/Pithla%20Fort.JPG</image:loc>
+            <image:title>Pithla Fort Architecture &amp; Stone Masonry</image:title>
+        </image:image>
+    </url>
+
+    <!-- Contact & Secretariat (शाही संपर्क कक्ष) -->
+    <url>
+        <loc>https://pithla.in/?page=contact</loc>
+        <lastmod>2026-11-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+</urlset>
